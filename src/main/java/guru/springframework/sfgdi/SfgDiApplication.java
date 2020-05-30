@@ -1,7 +1,7 @@
 package guru.springframework.sfgdi;
 
-import guru.springframework.sfgdi.controllers.*;
-import guru.springframework.sfgdi.exaplebeans.FakeDataSource;
+import guru.springframework.sfgdi.exampleBeans.FakeDataSource;
+import guru.springframework.sfgdi.exampleBeans.FakeJmsSource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -16,6 +16,9 @@ public class SfgDiApplication {
 		System.out.println(fds.getUser());
 		System.out.println(fds.getPassword());
 		System.out.println(fds.getUrl());
+
+		FakeJmsSource jmsSource = (FakeJmsSource) ctx.getBean(FakeJmsSource.class);
+		System.out.println(jmsSource.getUsername());
 
 		/*PetController petController = ctx.getBean("petController", PetController.class);
 		System.out.println("--- The Best Pet is ---");
