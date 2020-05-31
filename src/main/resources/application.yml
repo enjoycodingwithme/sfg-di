@@ -1,0 +1,5 @@
+test:
+    :jsm:
+        username: hofo
+        password: somepassword
+        url: dbrul
